@@ -1,0 +1,8 @@
+<% if @items.empty? %>
+  <h2> No items in that bucket...yet! </h2>
+<% else %>
+  <% @items.each do |item| %>
+    <li><%= item.title %></li>
+  <% end %>
+<% end %>
+<%= erb :new_form %>
