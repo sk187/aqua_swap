@@ -1,0 +1,16 @@
+<h1><%=current_user.user_name.capitalize%>'s Swaps</h1>
+<%@my_swaps.each do |item|%>
+
+<li> <h3><%= item.product_name %></h3> </li>
+  <li> <p><%= item.description %></p> </li>
+  <li> <img src="<%= item.image %>"> </li>
+  <li> <p><%= "$#{item.price}" %></p> </li>
+  <li> <p><%= item.quantity %></p> </li>
+<form action="/products/my_swaps/delete" method ="post">
+      <input type="hidden" name = "my_swap_id_delete" value="<%= item.id %>" />
+      <input type="submit" value = "No Swap!"/> 
+</form>
+
+<a href="/products/my_swap/edit/<%=item.id%>">Edit Swap</a> 
+
+<%end%>

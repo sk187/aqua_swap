@@ -1,5 +1,4 @@
 require "bcrypt"
-require_relative "../db/connection"
 
 class User < ActiveRecord::Base
   # attributes

@@ -1,0 +1,36 @@
+<% @item_info.each do |item|%>
+<li> <h3><%= item.product_name %></h3> </li>
+  <li> <p><%= item.description %></p> </li>
+  <li> <img src="<%= item.image %>"> </li>
+  <li> <p><%= "$#{item.price}" %></p> </li>
+  <li> <p><%= item.quantity %></p> </li>
+<%end%> 
+
+<form action="/products/my_swap/edit" method="post">
+
+  <div>
+    <input type="text" name="product_name" placeholder="Product Name"/>
+  </div>
+
+  <div>
+    <input type="text" name="description" placeholder="Description"/>
+  </div>
+
+  <div>
+    <input type="text" name="product_image" placeholder="Paste Image URL here" />
+  </div>
+
+  <div>
+    <input type="money" name="price" placeholder="Enter Price Here"/>
+  </div>
+
+  <div>
+    <input type="number" name="product_quantity" placeholder="Enter Quantity Here"/>
+  </div>
+
+	<input type="hidden" name = "my_swap_id_edit" value="<%=@item_num%>" />
+
+  <div>
+    <input type="submit" value="Swap!"/>
+  </div>
+</form>

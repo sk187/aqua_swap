@@ -1,0 +1,16 @@
+<ul>
+<% @products.each do |product| %>
+  <li>
+    <h3><%= product.product_name %></h3>
+    <strong>$<%= product.price %></strong>
+    <p><%= product.description %></p>
+    <img src="<%= product.image %>" class="product-img" />
+    <p><%= product.seller %> </p>
+    <p><%= product.quantity %></p>
+    <form action="/cart/product_add" method="post">
+      <input type="hidden" name="product_id_add" value="<%= product.id %>" />
+      <input type="submit" value="Add to Cart" />
+    </form>   
+  </li>
+<% end %>
+</ul>

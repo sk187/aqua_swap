@@ -1,0 +1,16 @@
+<p>Here is your shopping cart so far:</p>
+<ul>
+ <% @cart_items.each do |item| %>
+
+  <li> <h3><%= item.product_name %></h3> </li>
+  <li> <p><%= item.description %></p> </li>
+  <li> <img src="<%= item.image %>"> </li>
+  <li> <p><%= "$#{item.price}" %></p> </li>
+  <li> <p><%= item.seller %></p> </li>
+
+  <form action="/cart/product_delete" method ="post">
+      <input type="hidden" name = "product_id_delete" value="<%= item.id %>" />
+      <input type="submit" value = "Delete from Cart"/> 
+  </form>
+<%end%>
+</ul>
