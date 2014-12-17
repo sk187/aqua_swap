@@ -9,6 +9,8 @@
     <p><%= product.quantity %></p>
     <form action="/cart/product_add" method="post">
       <input type="hidden" name="product_id_add" value="<%= product.id %>" />
+      <input type="number" name="avalible_quant" value="<%= product.quantity %>"/>
+      <input type="number" name="product_quant"/>
       <input type="submit" value="Add to Cart" />
     </form>   
   </li>

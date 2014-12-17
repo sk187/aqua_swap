@@ -94,9 +94,13 @@ get "/cart" do
 end
 
 post "/cart/product_add" do
+ @wanted_quant = params[:product_quant].to_i
+ @avalible_quant = params[:avalible_quant].to_i
+ @naqi = @avalible_quant-@wanted_quant
+ @new_avalible_quant = @naqi.to_s
   Product.update(
     params[:product_id_add],
-    quantity: params[:product_quantity]
+    quantity: @new_avalible_quant
   )
 
   session[:cart] << params[:product_id_add]
