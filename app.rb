@@ -35,7 +35,7 @@ get "/users" do
 end
 
 get "/products" do
-  @products = Product.all
+  @products = Product.where("quantity >'0'")
   erb :products
 end
 
@@ -76,7 +76,7 @@ end
 
 
 post "/user/add" do
-Product.create(
+@new_swap = Product.create(
   product_name: params[:product_name],
   description: params[:description],
   image: params[:product_image],
@@ -84,9 +84,9 @@ Product.create(
   seller: @current_user.user_name,
   quantity: params[:product_quantity],
   user_id: @current_user.id
-    )
-redirect ("/products")
+  )
 end
+
 
 get "/cart" do
   @cart_items = Product.where(:id => session[:cart]) 
@@ -94,6 +94,11 @@ get "/cart" do
 end
 
 post "/cart/product_add" do
+  Product.update(
+    params[:product_id_add],
+    quantity: params[:product_quantity]
+  )
+
   session[:cart] << params[:product_id_add]
   redirect('/cart')
 end

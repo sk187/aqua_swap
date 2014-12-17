@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to the Shopping Cart</title>
+    <title>Welcome to AquaSwap</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   </head>
   <body>
@@ -19,7 +19,7 @@
           <% end %>
         </ul>
       </nav>
-
+        
       <% unless @errors.empty? %>
       <ul>
         <% @errors.each do |error| %>
@@ -27,7 +27,6 @@
         <% end %>
       </ul>
       <% end %>
-
     </header>
 
     <%= yield %>
