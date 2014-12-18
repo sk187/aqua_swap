@@ -6,20 +6,20 @@
     <link rel="stylesheet" type="text/css" href="<%=url("/normalize.css")%>">
     <link rel="stylesheet" type="text/css" href="<%=url("/font-awesome/css/font-awesome.min.css")%>">
     <link rel="stylesheet" type="text/css" href="<%=url("/styles.css")%>">
-    <link rel="stylesheet" type="text/css" href="<%=url("/product_page.css")%>">
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="/"> <i class="fa fa-home fa-fw"></i>&nbsp;Home</a> </li>
+          <li><a href="/">Home</a> </li>
           <li><a href="/products">Products</a></li>
           <li><a href="/cart">Cart (<%= session[:cart].count%>)</a></li>
           <% if current_user? %>
           <li><a href="/users">User Profile</a></li>
           <li><a href="/session/logout">Log Out</a></li>
           <% else %>
-          <li><a href="/session/login">Log In</a> or <a href="/session/sign_up">Sign Up</a></li>
+          <li><a href="/session/login">Log In</a></li>
+          <li> <a href="/session/sign_up">Sign Up</a></li>
           <% end %>
         </ul>
       </nav>
