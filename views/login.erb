@@ -1,11 +1,14 @@
-<form action="/session/login" method="post">
-  <div>
-    <input type="text" name="email" placeholder="Email" />
-  </div>
-  <div>
-    <input type="password" name="password" placeholder="Password" />
-  </div>
-  <div>
-    <input type="submit" value="Log In!" />
-  </div>
-</form>
+<html>
+<link rel="stylesheet" type="text/css" href="<%=url("/signin.css")%>">
+	<form action="/session/login" method="post">
+	  <div>
+	    <input type="text" name="email" placeholder="Email" />
+	  </div>
+	  <div>
+	    <input type="password" name="password" placeholder="Password" />
+	  </div>
+	  <div>
+	    <input type="submit" value="Log In!" />
+	  </div>
+	</form>
+</html>

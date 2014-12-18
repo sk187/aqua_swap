@@ -30,9 +30,3 @@ nav ul li a {
 	color: black;
 }
 
-html {
-	background-repeat: no-repeat;
-	background-image: url("http://i.imgur.com/5SStPHi.jpg");
-	background-size: cover;
-	height: 100%;
-}

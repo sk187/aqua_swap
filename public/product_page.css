@@ -1,6 +1,6 @@
 .item_for_sale li {
 	display: inline-block;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.5);
 	width: 14.9em;
 	padding: 1em;
 	height: 25em;
@@ -27,4 +27,11 @@ img {
 
 legend {
 	font-weight: bold;
+}
+
+html {
+	background-repeat: no-repeat;
+	background-image: url("http://imgur.com/eL33LN0.jpg");
+	background-size: cover;
+	height: 100%;
 }
