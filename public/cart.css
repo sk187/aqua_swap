@@ -2,5 +2,6 @@ html {
 	background-repeat: no-repeat;
 	background-image: url("http://imgur.com/5uJkDJU.jpg");
 	background-size: cover;
+	background-attachment: fixed;
 	height: 100%;
 }

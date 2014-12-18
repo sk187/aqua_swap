@@ -1,9 +1,8 @@
 .item_for_sale li {
 	display: inline-block;
 	background-color: rgba(255,255,255,0.5);
-	width: 14.9em;
-	padding: 1em;
-	height: 25em;
+	margin: 1em;
+	box-sizing:border-box;
 }
 
 .item_for_sale {
@@ -12,11 +11,16 @@
 }
 
 .item_box{
-	margin: auto;
+	
+	min-width:15em;
+	max-width: 15em; 
+	max-height: 25em;
+	min-height: 20em;
+	
 }
 
 img {
-	width: 14.9em;
+	width: 14em;
 	height: 10em;
 	margin: auto;
 }
@@ -33,5 +37,6 @@ html {
 	background-repeat: no-repeat;
 	background-image: url("http://imgur.com/eL33LN0.jpg");
 	background-size: cover;
+	background-attachment: fixed;
 	height: 100%;
 }

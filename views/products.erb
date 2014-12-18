@@ -7,17 +7,17 @@
   <li>
   <div class="item_box">
     <h3><%= product.product_name %> <strong>$<%= product.price %></strong></h3>
-    <p><%= product.description %></p>
+    <%= product.description %>
     <img src="<%= product.image %>" class="product-img" />
-    <p><legend>Seller:</legend><%= product.seller.capitalize%> </p>
-    <p><legend>Quantity Available:</legend><%= product.quantity %></p>
+    <legend>Seller:</legend><%= product.seller.capitalize%> 
+    <legend>Quantity Available:</legend><%= product.quantity %>
     <form action="/cart/product_add" method="post">
       <input type="hidden" name="product_id_add" value="<%= product.id %>" />
       <input type="hidden" name="avalible_quant" value="<%= product.quantity %>"/>
       <input class ="number" type="number" size="3" name="product_quant"/>
       <input type="submit" value="Add to Cart" />
-      </div>
-    </form>   
+    </form>  
+  </div>
   </li>
 <% end %>
 </ul>
