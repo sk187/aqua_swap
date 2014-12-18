@@ -1,13 +1,25 @@
 .product_add_form {
-	float: center;
-	text-align: left;
-	margin-right: 15px;
-	width: 200px;
-	margin: auto;
+	background-color: rgba(255,255,255,0.7);
+	display: block;
+	border-radius: 1em;
+	padding: 4em;
+	width: 15%;
+	margin:auto;
 }
 
+
 label {
-	color:white;
+	display: inline-block;
+	color:black;
+	float:left;
+	clear:left;
+	text-align: right;
+	font-weight: bold;
+}
+input {
+	display: inline-block;
+	float: right;
+	clear: right;
 }
 
 html {

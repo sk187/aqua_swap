@@ -16,18 +16,25 @@ helpers do
     @current_user == nil ? false : true
   end
 end
-
 before do
   session[:cart] ||= []
   @errors ||= []
   @current_user = User.find_by(:id => session[:user_id])
 end
 
+  def sign_in_wall
+    if current_user == nil
+      redirect('/session/login')
+    end
+  end
+
 get "/" do
+  sign_in_wall
   erb :index
 end
 
 get "/users" do
+  sign_in_wall
   if current_user?
     erb :profile
   else
@@ -36,15 +43,18 @@ get "/users" do
 end
 
 get "/products" do
+  sign_in_wall
   @products = Product.where("quantity >'0'")
   erb :products
 end
 
 get "/products/add" do 
+  sign_in_wall
   erb :add
 end
 
 get "/products/my_swaps" do
+  sign_in_wall
   @current_user_id = @current_user.id
   @my_swaps = Product.where(:user_id => @current_user_id )
   erb :my_swaps
@@ -57,6 +67,7 @@ post "/products/my_swaps/delete" do
 end
 
 get '/products/my_swap/edit/:item' do
+  sign_in_wall
   @item_num = params[:item]
   @item_info = Product.where(:id => @item_num)
   erb :my_swaps_edit
@@ -92,6 +103,7 @@ end
 
 
 get "/cart" do
+  sign_in_wall
   @cart_items = Product.where(:id => session[:cart]) 
   erb :cart
 end
@@ -107,6 +119,7 @@ post "/cart/product_add" do
   )
 
   session[:cart] << params[:product_id_add]
+  session[:cart] << params[:product_quant]
   redirect('/cart')
 end
 

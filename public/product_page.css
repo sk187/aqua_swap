@@ -1,36 +1,7 @@
-.item_for_sale li {
-	display: inline-block;
-	background-color: rgba(255,255,255,0.5);
-	margin: 1em;
-	box-sizing:border-box;
-}
 
-.item_for_sale {
-	width: 90%;
-	margin: auto;
-}
-
-.item_box{
-	
-	min-width:15em;
-	max-width: 15em; 
-	max-height: 25em;
-	min-height: 20em;
-	
-}
-
-img {
-	width: 14em;
-	height: 10em;
-	margin: auto;
-}
 
 .number {
 	width: 3em;
-}
-
-legend {
-	font-weight: bold;
 }
 
 html {

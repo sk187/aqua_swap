@@ -1,8 +1,14 @@
-<p>Welcome back, <%= current_user.user_name.capitalize %></p>
-<p> Main Menu</p>
+<html>
+<h1>Welcome back, <%= current_user.user_name.capitalize %> </h1>
 
+<link rel="stylesheet" type="text/css" href="<%=url("/profile.css")%>">
+
+<div class="menu">
+<h2> Main Menu </h2>
 <ul>
   <li><a href="/products/add">Swap Something!</a></li>
   <li><a href="/products/my_swaps">My Swaps</a></li>
-
+  <li><a href="/user/edit_profile">Edit My Profile</a></li>
 </ul>
+</div>
+</html>

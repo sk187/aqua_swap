@@ -2,24 +2,27 @@
 <link rel="stylesheet" type="text/css" href="<%=url("/cart.css")%>">
 
 <h1>Here is your shopping cart so far:</h1>
+<div class="item_for_sale">
 <ul>
  <% @cart_items.each do |item| %>
-
-  <li> <h3><%= item.product_name %></h3> </li>
-  <li> <p><%= item.description %></p> </li>
-  <li> <img src="<%= item.image %>"> </li>
-  <li> <p><%= "$#{item.price}" %></p> </li>
-  <li> <p><%= item.seller %></p> </li>
-
+  <li> 
+    <div class ="item_box">
+    <h3><%= item.product_name %></h3> 
+    <p><%= item.description %></p> 
+    <img src="<%= item.image %>"> 
+    <p><%= "$#{item.price}" %></p> 
+    <p><%= item.seller %></p> 
   <form action="/cart/product_delete" method ="post">
       <input type="hidden" name = "product_id_delete" value="<%= item.id %>" />
       <input type="submit" value = "Delete from Cart"/> 
   </form>
 
   <form action="/cart/product_edit_quant" method="post">
-  <input type="hidden" name = "available_quant" value ="<%= item.quantity%>"/>
-<!--   I may need to create a shopping cart database to store the values -->
-
+      <input type="hidden" name = "available_quant" value ="<%= item.quantity%>"/>
+  </form>
+  </div>
+  </li>
 <%end%>
 </ul>
+</div>
 </html>

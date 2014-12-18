@@ -1,16 +1,35 @@
+<html>
+<link rel="stylesheet" type="text/css" href="<%=url("/product_add.css")%>">
+
 <h1><%=current_user.user_name.capitalize%>'s Swaps</h1>
-<%@my_swaps.each do |item|%>
 
-<li> <h3><%= item.product_name %></h3> </li>
-  <li> <p><%= item.description %></p> </li>
-  <li> <img src="<%= item.image %>"> </li>
-  <li> <p><%= "$#{item.price}" %></p> </li>
-  <li> <p><%= item.quantity %></p> </li>
-<form action="/products/my_swaps/delete" method ="post">
-      <input type="hidden" name = "my_swap_id_delete" value="<%= item.id %>" />
-      <input type="submit" value = "No Swap!"/> 
-</form>
 
-<a href="/products/my_swap/edit/<%=item.id%>">Edit Swap</a> 
-
+<div class="item_for_sale">
+<ul>
+<%@my_swaps.each do |product|%>
+<li>
+	<div class="item_box">
+ 		<h3><%= product.product_name %> <strong>$<%= product.price %></strong></h3>
+	    <img src="<%= product.image %>" class="product-img" />
+	    <%= product.description %>
+	    <div class="seller"> 
+	    	<label>Seller:</label><%= product.seller.capitalize%>
+	    </div>	 
+	    <div class="quantity">
+	    	<label>Quantity Available:</label><%= product.quantity %>
+	    </div>
+	    
+			<form action="/products/my_swaps/delete" method ="post">
+		      <input type="hidden" name = "my_swap_id_delete" value="<%= product.id %>" />
+		      <input type="submit" value = "No Swap!"/> 
+			</form>
+		<div class="edit">	
+		<a href="/products/my_swap/edit/<%=product.id%>">Edit Swap</a> 
+		</div>
+	</div>
+</li>
 <%end%>
+
+</ul>
+</div>
+</html>

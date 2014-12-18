@@ -1,0 +1,30 @@
+html {
+	background-repeat: no-repeat;
+	background-image: url("http://imgur.com/5uJkDJU.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+.menu ul li {
+	list-style: none;
+	background-color: black;
+	border-radius: 0.5em;
+	width: 40%;
+	display: inline-block;
+	box-sizing:border-box;
+	margin: 1em;
+}
+
+ul li a {
+	text-decoration: none;
+	color: white;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.menu{
+	background-color: rgba(255,255,255,0.5);
+	width: 40%;
+	margin:auto;
+}

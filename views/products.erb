@@ -6,11 +6,15 @@
 <% @products.each do |product| %>
   <li>
   <div class="item_box">
-    <h3><%= product.product_name %> <strong>$<%= product.price %></strong></h3>
+    <h3><%= product.product_name %><strong>$<%= product.price %></strong></h3>
     <%= product.description %>
     <img src="<%= product.image %>" class="product-img" />
-    <legend>Seller:</legend><%= product.seller.capitalize%> 
-    <legend>Quantity Available:</legend><%= product.quantity %>
+    <div class="seller">
+      <label>Seller:</label><%= product.seller.capitalize%> 
+    </div>
+    <div class="quantity">
+    <label>Quantity Available:</label><%= product.quantity %>
+    </div>
     <form action="/cart/product_add" method="post">
       <input type="hidden" name="product_id_add" value="<%= product.id %>" />
       <input type="hidden" name="avalible_quant" value="<%= product.quantity %>"/>
