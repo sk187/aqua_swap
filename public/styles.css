@@ -76,6 +76,7 @@ label {
 	clear:left;
 	text-align: right;
 	font-weight: bold;
+	margin: .2em;
 }
 
 .edit a {
