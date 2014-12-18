@@ -16,8 +16,13 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    commonjs (0.2.7)
+    font-awesome-less (4.2.0)
+      less (~> 2.4.0)
     i18n (0.6.11)
     json (1.8.1)
+    less (2.4.0)
+      commonjs (~> 0.2.7)
     minitest (5.4.3)
     pg (0.17.1)
     rack (1.5.2)
@@ -40,6 +45,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  font-awesome-less
   pg
   sinatra
   sinatra-activerecord

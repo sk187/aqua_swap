@@ -12,5 +12,10 @@
       <input type="hidden" name = "product_id_delete" value="<%= item.id %>" />
       <input type="submit" value = "Delete from Cart"/> 
   </form>
+
+  <form action="/cart/product_edit_quant" method="post">
+  <input type="hidden" name = "available_quant" value ="<%= item.quantity%>"/>
+<!--   I may need to create a shopping cart database to store the values -->
+
 <%end%>
 </ul>

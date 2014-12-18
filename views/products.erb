@@ -1,18 +1,23 @@
+<link rel="stylesheet" type="text/css" href="<%=url("/product_page.css")%>">
+
+<div class="item_for_sale">
 <ul>
 <% @products.each do |product| %>
   <li>
-    <h3><%= product.product_name %></h3>
-    <strong>$<%= product.price %></strong>
+  <div class="item_box">
+    <h3><%= product.product_name %> <strong>$<%= product.price %></strong></h3>
     <p><%= product.description %></p>
     <img src="<%= product.image %>" class="product-img" />
-    <p><%= product.seller %> </p>
-    <p><%= product.quantity %></p>
+    <p><legend>Seller:</legend><%= product.seller.capitalize%> </p>
+    <p><legend>Quantity Available:</legend><%= product.quantity %></p>
     <form action="/cart/product_add" method="post">
       <input type="hidden" name="product_id_add" value="<%= product.id %>" />
-      <input type="number" name="avalible_quant" value="<%= product.quantity %>"/>
-      <input type="number" name="product_quant"/>
+      <input type="hidden" name="avalible_quant" value="<%= product.quantity %>"/>
+      <input class ="number" type="number" size="3" name="product_quant"/>
       <input type="submit" value="Add to Cart" />
+      </div>
     </form>   
   </li>
 <% end %>
 </ul>
+</div>

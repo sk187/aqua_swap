@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'font-awesome-less'
 require_relative "./models/user"
 require_relative "./models/product"
 require_relative './config/environments'
@@ -72,6 +73,8 @@ post '/products/my_swap/edit' do
     quantity: params[:product_quantity],
     user_id: @current_user.id
   )
+
+  redirect('/products/my_swaps')
 end
 
 
