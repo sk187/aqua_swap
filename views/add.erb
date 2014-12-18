@@ -1,26 +1,24 @@
+<html>
+<link rel="stylesheet" type="text/css" href="<%=url("/product_add.css")%>">
+
 <form action="/user/add" method="post">
 
-  <div>
-    <input type="text" name="product_name" placeholder="Product Name"/>
-  </div>
-
-  <div>
-    <input type="text" name="description" placeholder="Description"/>
-  </div>
-
-  <div>
-    <input type="text" name="product_image" placeholder="Paste Image URL here" />
-  </div>
-
-  <div>
-    <input type="money" name="price" placeholder="Enter Price Here"/>
-  </div>
-
-  <div>
-    <input type="number" name="product_quantity" placeholder="Enter Quantity Here"/>
-  </div>
-
-  <div>
+  <div class ="product_add_form">
+   <label for="product_name">Product Name:</label> 
+   <input type="text" name="product_name" placeholder="Crystal Red Shrimp" maxlength="24" />
+        <br>
+    <label for="description">Description:</label> 
+    <input type="text" name="description" placeholder="SS Grade" maxlength="24"/>
+        <br>
+    <label for="product_image">Image URL:</label> <input type="text" name="product_image" placeholder="Paste here" />
+        <br> 
+    <label for="price">Price:</label> 
+    <input type="money" name="price" placeholder="5.00"/>
+        <br> 
+    <label for="product_quantity">Quantity:</label> 
+    <input type="number" name="product_quantity" placeholder="10"/>
+        <br>
     <input type="submit" value="Swap!"/>
   </div>
 </form>
+</html>

@@ -1,0 +1,19 @@
+.product_add_form {
+	float: center;
+	text-align: left;
+	margin-right: 15px;
+	width: 200px;
+	margin: auto;
+}
+
+label {
+	color:white;
+}
+
+html {
+	background-repeat: no-repeat;
+	background-image: url("http://imgur.com/eL33LN0.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+}
